@@ -1,8 +1,11 @@
 # Blackjack Game
 # Jobs
 Front: Rohan Harrison
+
 Back: Tyler Benson, Brian Bianchi
+
 Database: Jeff Stone, Richard Reilly
+
 # Software
 Visual Studio JS/D3/Dojo/HTML/CSS/Node with Mongo DB (Mongoose) and Express.
 # Description
