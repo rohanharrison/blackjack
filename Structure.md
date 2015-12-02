@@ -26,7 +26,7 @@ HandDealer	- Hand object {array of cards objects in hand, current score}
 # Flow of project
 
 *		Sign-in/Sign-up
-*		
+
 *-> 	List of tables (single player option, and other open tables)
 
 *-->	Game
