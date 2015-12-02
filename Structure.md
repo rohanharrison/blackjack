@@ -1,6 +1,7 @@
 # Website/Database Structure
 
 //user
+
 userIdNum - Integer
 
 userNm - String
@@ -36,6 +37,7 @@ HandDealer	- Hand object {array of cards objects in hand, current score}
 
 
 # Possible features
+
 	-Multi-player
 	
 	-Leader-board
