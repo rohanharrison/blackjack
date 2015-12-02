@@ -25,8 +25,4 @@ handDealer	- hand object {array of cards objects in hand, current score}
 -----------------------------------------------------------------------------
 # Possible features
 	-Multi-player
-<<<<<<< HEAD
 	-Leader-board
-=======
-	-Leader-board
->>>>>>> origin/master
