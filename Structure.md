@@ -13,6 +13,7 @@ chips - Integer
 avatar - String
 
 
+
 //Game Session (JSON?)
 
 Deck		- Array of card objects
