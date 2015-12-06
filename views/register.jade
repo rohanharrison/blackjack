@@ -1,0 +1,21 @@
+extends base
+
+block vars
+  - var title = 'Register'
+
+block body
+  h1 Create an Account
+
+  if error
+    p ERROR: #{error}
+
+  form(method="post")
+    span Username:
+    input(type="text", name="username", required=true)
+    br
+
+    span Password:
+    input(type="password", name="password", required=true)
+    br
+
+    input(type="submit")

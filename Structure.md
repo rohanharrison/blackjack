@@ -4,7 +4,7 @@
 
 userIdNum - Integer
 
-userNm - String
+usename - String
 
 password - Salted String
 
