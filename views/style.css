@@ -58,12 +58,13 @@ input[type=submit] {
 	position: absolute;
 	height: auto;
 	padding-left: 8px;
+	padding-bottom: 4px;
 	margin-left: auto;
 	margin-right: auto;
 	left: 0;
 	right: 0;
 	top: 30%;
 	transform: translateY(-30%);
-	border-radius: 1px;
-	border-bottom: 1px solid #bfbfbf;
+	border-radius: 2px;
+	border-bottom: 2px solid #ccc;
 }
