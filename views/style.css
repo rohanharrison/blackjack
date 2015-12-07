@@ -3,6 +3,9 @@ body {
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
+	color: #737373;
+	background: #F5F4F3 url('http://i.imgur.com/42HAeJq.png') repeat;
 }
 a {
 	text-decoration: none;
@@ -12,19 +15,19 @@ input {
 	border: 0;
 	height: 20px;
 	width: 200px;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #bfbfbf;
 	font-size: 17px;
 	padding: 4px;
 	margin-bottom: 6px;
+	background-color: transparent;
 }
 input[type=submit] {
-	background-color: #fff;
 	font-size: 16px;
 	width: 100px;
 	height: 25px;
 	border: 0;
-	margin-top: -25px;
-	border: 1px solid #000;
+	margin-top: -30px;
+	border: 1px solid #bfbfbf;
 	float: right;
 	text-transform: uppercase;
 }
@@ -40,7 +43,7 @@ input[type=submit] {
 	line-height: 25px;
 	top: 0;
 	left: 0;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #eee;
 	padding-left: 2%;
 	padding-right: 2%;
 	padding-bottom: 4px;
@@ -50,7 +53,6 @@ input[type=submit] {
 	text-transform: uppercase;
 }
 #welcomeContainer {
-	background-color: #fff;
 	width: auto;
 	max-width: 700px;
 	position: absolute;
@@ -62,5 +64,6 @@ input[type=submit] {
 	right: 0;
 	top: 30%;
 	transform: translateY(-30%);
-	border-left: 1px solid #000;
+	border-radius: 1px;
+	border-bottom: 1px solid #bfbfbf;
 }
