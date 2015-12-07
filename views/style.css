@@ -87,4 +87,5 @@ input[type=submit] {
 	border-bottom-right-radius: 200px;
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
+        border: 12px solid brown;
 }
