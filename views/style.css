@@ -1,0 +1,45 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: #4BA4F2;
+}
+input {
+	border: 0;
+	height: 20px;
+	width: 200px;
+	border-bottom: 1px solid #000;
+	font-size: 17px;
+}
+input[type=submit] {
+	background-color: #fff;
+	font-size: 16px;
+	width: 100px;
+	height: 25px;
+	border: 0;
+	margin-top: -25px;
+	border: 1px solid #000;
+	float: right;
+	text-transform: uppercase;
+}
+
+
+#welcomeContainer {
+	background-color: #fff;
+	width: auto;
+	max-width: 700px;
+	position: absolute;
+	height: auto;
+	padding-left: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 30%;
+	transform: translateY(-30%);
+	border-left: 1px solid #000;
+}
