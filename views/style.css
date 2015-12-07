@@ -47,6 +47,7 @@ input[type=submit] {
 	padding-left: 2%;
 	padding-right: 2%;
 	padding-bottom: 4px;
+	z-index: 1000;
 }
 #topNav h1{
 	font-size: 1.4em;
@@ -124,4 +125,28 @@ input[type=submit] {
 	width: 125px;
 	height: 125px;
 	border: 2px solid #ccc;
+}
+#topControls {
+	position: relative;
+	padding-right: 2%;
+	padding-bottom: 4px;
+	float: right;
+	width: auto;
+	height: 50px;
+	z-index: 1001;
+}
+#topControls img {
+	position: absolute;
+	margin-top: 23px;
+	margin-left: 23px;
+}
+#topControls li {
+	display: inline;
+	font-size: 1.2em;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-left: 1px solid #ccc;
+}
+#topControls li:first-child {
+	border-left: 0;
 }
