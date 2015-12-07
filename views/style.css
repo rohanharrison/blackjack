@@ -43,7 +43,7 @@ input[type=submit] {
 	line-height: 25px;
 	top: 0;
 	left: 0;
-	border-bottom: 1px solid #eee;
+	border-bottom: 4px solid #ccc;
 	padding-left: 2%;
 	padding-right: 2%;
 	padding-bottom: 4px;
