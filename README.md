@@ -11,13 +11,20 @@ $ npm start      # host locally
 ```
 # Team
 Front: Rohan Harrison
+
 Back: Brian Bianchi, Tyler Benson
+
 Database: Jeff Stone, Richard Reilly
+
 
 # Software
 Visual Studio 
+
 D3, Dojo, Jade, CSS,
+
 Nodejs, MongoDB, Express, socket.io, jade, client-sessions, bcryptjs
 
+
 # Description
+
 This is a blackjack game built with Node, MongoDB, and Dojo, D3, Jade, and CSS for our front end.
