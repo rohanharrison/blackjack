@@ -12,6 +12,7 @@ var User = mongoose.model('User', new Schema({
 	id: ObjectId,
 	username: {type: String, unique: true },
 	password: String,
+	chips: Number,
 }))
 
 app.set('view engine', 'jade');
@@ -31,7 +32,7 @@ app.use(sessions({
 app.use(bodyParser.json());
 
 // Routes
-app.use(express.static(__dirname + '/public'));
+//app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
 	res.render('index.jade');
@@ -45,6 +46,7 @@ app.post('/register', function(req, res) {
 	var user = new User({
 		username: req.body.username,
 		password: hash,
+		chips: 2000,
 	});
 	user.save(function(err) {
 		if (err) {
@@ -54,6 +56,7 @@ app.post('/register', function(req, res) {
 			}
 			res.render('register.jade', {error: error });
 		} else {
+			req.session.user = user;
 			res.redirect('/dashboard');
 		}
 	});

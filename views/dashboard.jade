@@ -5,9 +5,14 @@ block vars
 
 block body
   h1 Dashboard
+  <a href="/logout">Logout</a>
   p.
-    Welcome to your Blackjack dashboard! You are now logged in.
+    Welcome, #{user.username}! You are now logged in.
 
   h2 User Information
   p Username: #{user.username}
-  //p Data:       #{user.data}
+  p Chips:       #{user.chips}
+  //p Avatar:       #{user.avatar}
+
+  h2 Join a Table!
+  <a href="/table">Table 1</a>
