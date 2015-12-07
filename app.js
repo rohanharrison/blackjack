@@ -96,6 +96,10 @@ app.get('/dashboard', function(req, res) {
 	}
 });
 
+app.get('/game', function(req, res) {
+	res.render('game.jade');
+});
+
 app.get('/logout', function(req, res) {
 	req.session.reset();
 	res.redirect('/');

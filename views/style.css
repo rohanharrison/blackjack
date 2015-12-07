@@ -68,3 +68,23 @@ input[type=submit] {
 	border-radius: 2px;
 	border-bottom: 2px solid #ccc;
 }
+#board {
+	background: #009671 url('http://i.imgur.com/42HAeJq.png') repeat;
+	width: 900px;
+	height: 500px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	left: 0;
+	right: 0;
+	top: 30%;
+	transform: translateY(-30%);
+	border-bottom-left-radius: 200px;
+	border-bottom-right-radius: 200px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
