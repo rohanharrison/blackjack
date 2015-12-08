@@ -193,3 +193,19 @@ input[type=submit] {
 	margin-top: 20px;
 	border-bottom: 1px solid #ccc;
 }
+#dashboardAvatar {
+	float: left;
+	padding-right: 8px;
+}
+#changeAvatar {
+	position: absolute;
+	margin-left: -133px;
+	margin-top: 57px;
+	font-size: 11px;
+	width: 125px;
+	height: 25px;
+	border: 0;
+	border: 1px solid #bfbfbf;
+	text-transform: uppercase;
+	background-color: transparent;
+}

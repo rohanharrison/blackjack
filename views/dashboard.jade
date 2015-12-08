@@ -7,11 +7,16 @@ block body
  #dashboardContainer
   h2 Dashboard
   p Welcome, #{user.username}! You are now logged in.
+  h2 Account
+  img#dashboardAvatar(src= "http://i.imgur.com/HEBtz7c.png")
+  p Usern: #{user.username}
+  p Chips: #{user.chips}
+  button#changeAvatar(data-action="bea") Change Avatar
 
  #tables
   h2 Tables
   ul
+   li: <a href="/game">You vs. Dealer</a>
    li: <a href="/game">Table 1</a>
    li: <a href="/game">Table 2</a>
    li: <a href="/game">Table 3</a>
-   li: <a href="/game">Table 4</a>
