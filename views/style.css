@@ -95,8 +95,7 @@ input[type=submit] {
 	padding-bottom: 10px;
 	left: 0;
 	right: 0;
-	top: 30%;
-	transform: translateY(-30%);
+	margin-top: 87px;
 	border-bottom-left-radius: 200px;
 	border-bottom-right-radius: 200px;
 	border-top-left-radius: 8px;
@@ -111,8 +110,7 @@ input[type=submit] {
 	height: 50px;
 	left: 0;
 	right: 0;
-	top: 90%;
-	transform: translateY(-90%);
+	margin-top: 780px;
 }
 #controls button{
 	background: #009671 url('http://i.imgur.com/42HAeJq.png') repeat;
@@ -134,8 +132,7 @@ input[type=submit] {
 	height: 50px;
 	left: 0;
 	right: 0;
-	top: 82%;
-	transform: translateY(-82%);
+	margin-top: 640px;
 	width: 125px;
 	height: 125px;
 	border: 2px solid #ccc;
