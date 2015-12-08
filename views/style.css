@@ -107,7 +107,7 @@ input[type=submit] {
 	margin-left: auto;
 	margin-right: auto;
 	width: 225px;
-	height: 50px;
+	height: 100px;
 	left: 0;
 	right: 0;
 	margin-top: 780px;
@@ -115,14 +115,16 @@ input[type=submit] {
 #controls button{
 	background: #009671 url('http://i.imgur.com/42HAeJq.png') repeat;
 	color: #F5F4F3;
-	border-radius: 2px;
+	border-radius: 1px;
 	font-size: 1.1em;
 	width: 100px;
 	height: 25px;
 	border: 0;
 	margin-top: -30px;
-	border: 1px solid #bfbfbf;
+	padding: 15px;
+	border: 1px solid #009671;
 	text-transform: uppercase;
+	line-height: 5px;
 }
 #avatar {
 	position: absolute;
