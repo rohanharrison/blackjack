@@ -117,7 +117,8 @@ input[type=submit] {
 #controls button{
 	background: #009671 url('http://i.imgur.com/42HAeJq.png') repeat;
 	color: #F5F4F3;
-	font-size: 16px;
+	border-radius: 2px;
+	font-size: 1.1em;
 	width: 100px;
 	height: 25px;
 	border: 0;
@@ -159,6 +160,12 @@ input[type=submit] {
 	padding-left: 5px;
 	padding-right: 5px;
 	border-left: 1px solid #ccc;
+}
+#topControls p {
+	font-size: 1.2em;
+	line-height: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 #topControls li:first-child {
 	border-left: 0;

@@ -97,7 +97,19 @@ app.get('/dashboard', function(req, res) {
 });
 
 app.get('/game', function(req, res) {
-	res.render('game.jade');
+	if (req.session && req.session.user) {
+		User.findOne({ username: req.session.user.username }, function(err, user) {
+			if (!user) {
+				req.session.reset();
+				res.redirect('/game');
+			} else {
+				res.locals.user = user;
+				res.render('game.jade');
+			}
+		});
+	} else {
+		res.redirect('/game');
+	}
 });
 
 app.get('/logout', function(req, res) {
