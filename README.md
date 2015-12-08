@@ -2,22 +2,23 @@
 To run this app:
 
 Make sure Nodejs and MongoDB is installed.
-```console
-1. Create a directory /data/db for MongoDB (C:/ on my computer).
+Create a directory /data/db for MongoDB (C:/ on my computer).
 
-2. Open up CMD and navigate to your MongoDB folder. Then run the mongod command. 
+Open up CMD and navigate to your MongoDB folder. Then run the mongod command. 
+```console
 
 $ cd C:\Program Files\MongoDB\Server\3.0\bin
 
 $ mongod
+```
 
-3. Open up an additional CMD and navigate to the project folder (mine is in my google drive) and run the command.
+Open up an additional CMD and navigate to the project folder (mine is in my google drive) and run the command.
+```console
 
 $ cd C:\Users\USERNAME\Google Drive\CS 375_ Web Services\Blackjack
 
-$node app.js
+$ node app.js
 ```
-
 
 
 ```console
