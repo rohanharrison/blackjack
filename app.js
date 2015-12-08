@@ -35,7 +35,19 @@ app.use(bodyParser.json());
 //app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
-	res.render('index.jade');
+	if (req.session && req.session.user) {
+		User.findOne({ username: req.session.user.username }, function(err, user) {
+			if (!user) {
+				req.session.reset();
+				res.render('index.jade');
+			} else {
+				res.locals.user = user;
+				res.redirect('/dashboard');
+			}
+		});
+	} else {
+		res.render('index.jade');
+	}
 });
 
 app.get('/register', function(req, res) {
