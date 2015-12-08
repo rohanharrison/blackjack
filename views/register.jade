@@ -9,7 +9,7 @@ block body
   h1 Create Account
 
   if error
-    p ERROR: #{error}
+    p#errorMessage #{error}
 
   form(method="post")
     input(type="text", name="username" value="username", required=true)

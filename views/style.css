@@ -227,3 +227,6 @@ input[type=submit] {
 	text-transform: uppercase;
 	background-color: transparent;
 }
+#errorMessage {
+	color: red;
+}
