@@ -5,7 +5,7 @@ body {
 	padding: 0;
 	overflow: hidden;
 	color: #737373;
-	background: #F3F3F3 url('http://i.imgur.com/42HAeJq.png') repeat;
+	background: #F4F3F2 url('http://i.imgur.com/42HAeJq.png') repeat;
 }
 a {
 	text-decoration: none;
@@ -131,7 +131,6 @@ input[type=submit] {
 	color: #F5F4F3;
 }
 #controls button{
-	/*background: #009671 url('http://i.imgur.com/42HAeJq.png') repeat;*/
 	background-color: transparent;
 	color: #F5F4F3;
 	border-radius: 1px;
