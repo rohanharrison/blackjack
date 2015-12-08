@@ -5,7 +5,7 @@ body {
 	padding: 0;
 	overflow: hidden;
 	color: #737373;
-	background: #F5F4F3 url('http://i.imgur.com/42HAeJq.png') repeat;
+	background: #F3F3F3 url('http://i.imgur.com/42HAeJq.png') repeat;
 }
 a {
 	text-decoration: none;
@@ -43,7 +43,7 @@ input[type=submit] {
 	line-height: 25px;
 	top: 0;
 	left: 0;
-	border-bottom: 4px solid #ccc;
+	border-bottom: 2px solid #ccc;
 	padding-left: 2%;
 	padding-right: 2%;
 	padding-bottom: 4px;
@@ -54,20 +54,37 @@ input[type=submit] {
 	text-transform: uppercase;
 }
 #welcomeContainer {
-	width: auto;
-	max-width: 700px;
+	font-size: 2.0vw;
+	width: 100%;
+	margin-left: 27%;
 	position: absolute;
 	height: auto;
 	padding-left: 8px;
-	padding-bottom: 4px;
-	margin-left: auto;
-	margin-right: auto;
-	left: 0;
-	right: 0;
-	top: 30%;
-	transform: translateY(-30%);
-	border-radius: 2px;
-	border-bottom: 2px solid #ccc;
+	top: 25%;
+	transform: translateY(-25%);
+	border-bottom: 1px solid #ccc;
+}
+#logregContainer {
+	font-size: 1em;
+	width: 100%;
+	margin-left: 27%;
+	position: absolute;
+	height: auto;
+	padding-left: 8px;
+	top: 25%;
+	transform: translateY(-25%);
+	border-bottom: 1px solid #ccc;
+}
+#logregContainer input[type=submit] {
+	font-size: 16px;
+	width: 100px;
+	height: 25px;
+	border: 0;
+	float: none;
+	position: absolute;
+	margin-left: 425px;
+	border: 1px solid #bfbfbf;
+	text-transform: uppercase;
 }
 #dashboardContainer {
 	width: 70%;

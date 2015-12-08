@@ -4,20 +4,17 @@ block vars
   - var title = 'Register'
 
 block body
- #welcomeContainer
-  h1 Create an Account
-  <a href="/">BACK</a>
+ #tables
+ #logregContainer
+  h1 Create Account
 
   if error
     p ERROR: #{error}
 
   form(method="post")
-    span Username:
-    input(type="text", name="username", required=true)
-    br
+    input(type="text", name="username" value="username", required=true)
 
-    span Password:
-    input(type="password", name="password", required=true)
+    input(type="password", name="password" value="password", required=true)
     br
 
     input(type="submit")

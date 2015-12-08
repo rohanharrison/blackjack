@@ -4,19 +4,16 @@ block vars
   - var title = 'Login'
 
 block body
- #welcomeContainer
-  h1 Log Into Your Account
-  <a href="/">BACK</a>
+ #tables
+ #logregContainer
+  h1 Account Login
   if error
     p ERROR: #{error}
 
   form(method="post")
-    span Username:
-    input(type="text", name="username", required=true)
-    br
+    input(type="text", name="username" value="username", required=true)
 
-    span Password:
-    input(type="password", name="password", required=true)
+    input(type="password", name="password" value="password", required=true)
     br
 
     input(type="submit")

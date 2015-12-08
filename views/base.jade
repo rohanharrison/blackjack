@@ -9,7 +9,7 @@ html
   body
     block body
  #topNav
-  h1 Blackjack Game : #{title}
+  h1 <a href="/">Blackjack Game</a> : #{title}
  #topControls
   if locals.user
    img(src= "http://imgur.com/7zbc8i2.png" value="test") 
@@ -18,4 +18,4 @@ html
     li: span #{user.username}
     li: span <a href="/logout">Logout</a>
   else
-   p <a href="/register">Register</a> or <a href="/login">Login!</a>
+   p <a href="/register">register</a> or <a href="/login">login!</a>
