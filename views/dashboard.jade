@@ -4,9 +4,11 @@ block vars
   - var title = 'Dashboard'
 
 block body
- #welcomeContainer
-  h1 Dashboard
+ #dashboardContainer
+  h2 Dashboard
   p Welcome, #{user.username}! You are now logged in.
 
-  h2 Join a Table!
-  <a href="/game">Table 1</a>
+ #tables
+  h2 Tables
+  ul
+   li: <a href="/game">Table 1</a>

@@ -69,6 +69,19 @@ input[type=submit] {
 	border-radius: 2px;
 	border-bottom: 2px solid #ccc;
 }
+#dashboardContainer {
+	width: 70%;
+	position: absolute;
+	height: auto;
+	margin-left: 28%;
+	left: 0;
+	right: 0;
+	margin-top: 57px;
+}
+#dashboardContainer h2{
+	border-bottom: 1px solid #ccc;
+	font-size: 1.5em;
+}
 #board {
 	background: #009671 url('http://i.imgur.com/42HAeJq.png') repeat;
 	width: 900px;
@@ -149,4 +162,27 @@ input[type=submit] {
 }
 #topControls li:first-child {
 	border-left: 0;
+}
+#tables {
+	margin-top: 57px;
+	width: 25%;
+	height: 100%;
+	min-height: 1000px;
+	padding-left: 2%;
+	border-right: 1px solid #ccc;
+	float: left;
+}
+#tables h2 {
+	border-bottom: 1px solid #ccc;
+	font-size: 1.5em;
+}
+#tables ul {
+	margin: 0;
+	padding: 0;
+}
+#tables li {
+	list-style-type: none;
+	font-size: 1.5em;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #ccc;
 }
