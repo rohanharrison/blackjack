@@ -151,6 +151,9 @@ app.get('/game', function(req, res) {
 				res.locals.user = user;
 				console.log(theDeal.playerHand[0].imgSrc);
 				res.locals.pcone = theDeal.playerHand[0].imgSrc;
+				res.locals.pctwo = theDeal.playerHand[1].imgSrc;
+				res.locals.dcone = theDeal.playerHand[0].imgSrc;
+				res.locals.dctwo = theDeal.playerHand[1].imgSrc;
 				res.render('game.jade');
 			}
 		});
