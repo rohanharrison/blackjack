@@ -244,3 +244,10 @@ input[type=submit] {
     margin-top: 4px;
     margin-left: 4px;
 }
+#changeAvatarUpload {
+	position: absolute;
+	margin-top: -10px;
+	margin-left: -113px;
+	width: 120px;
+	opacity: 0.0;
+}
