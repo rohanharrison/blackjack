@@ -75,12 +75,9 @@ app.post('/register', function(req, res) {
 		chips: 2000,
 	});
 	user.save(function(err) { 
-		if (err) {
+		if (err){
 			var err = 'Something bad happened! Please try again.';
-			if (err) {
-				error = 'That user is already taken, try again.';
-			}
-			res.render('register.jade', {error: error });
+			res.render('register.jade', {error: 'That user is already taken, try again.'});
 		} else {
 			req.session.user = user;
 			res.redirect('/dashboard');
