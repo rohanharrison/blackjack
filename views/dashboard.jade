@@ -8,7 +8,7 @@ block body
   h2 Dashboard
   p Welcome, #{user.username}! You are now logged in.
   h2 Account
-  img#dashboardAvatar(src= "/images/avatar.png")
+  img#dashboardAvatar(src= "#{user.avatar}")
   p Usern: #{user.username}
   p Chips: #{user.chips}
   button#changeAvatar(data-action="bea") Change Avatar

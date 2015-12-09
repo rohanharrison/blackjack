@@ -15,6 +15,7 @@ var User = mongoose.model('User', new Schema({
 	username: {type: String, unique: true },
 	password: String,
 	chips: Number,
+	avatar: String,
 }))
 
 app.set('view engine', 'jade');
@@ -75,6 +76,7 @@ app.post('/register', function(req, res) {
 		username: req.body.username,
 		password: hash,
 		chips: 2000,
+		avatar: '/images/avatar.png',
 	});
 	user.save(function(err) { 
 		if (err){
