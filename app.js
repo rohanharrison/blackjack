@@ -8,6 +8,8 @@ var bcrypt = require('bcryptjs');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
 
+var deck = require('./game/deck.js');
+
 var User = mongoose.model('User', new Schema({
 	id: ObjectId,
 	username: {type: String, unique: true },
@@ -126,6 +128,7 @@ app.get('/game', function(req, res) {
 				req.session.reset();
 				res.redirect('/game');
 			} else {
+				deck.init();
 				res.locals.user = user;
 				res.render('game.jade');
 			}
