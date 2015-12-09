@@ -96,7 +96,7 @@ input[type=submit] {
     font-size: 1.5em;
 }
 #board {
-    background: #009671 url('http://i.imgur.com/42HAeJq.png') repeat;
+    background: #009671 url('/images/bg.png') repeat;
     width: 900px;
     height: 500px;
     position: absolute;
