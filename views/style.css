@@ -230,3 +230,21 @@ input[type=submit] {
 #errorMessage {
 	color: red;
 }
+#topLogin {
+	margin-top: 15px;
+}
+#topLogin span {
+	position: absolute;
+	margin-left: -80px;
+	font-size: 1.2em;
+	border-right: 1px solid #ccc;
+	padding-right: 8px;
+}
+#topLogin input {
+	width: 100px;
+}
+#topLogin input[type=submit] {
+	width: 85px;
+	margin-top: 4px;
+	margin-left: 4px;
+}
