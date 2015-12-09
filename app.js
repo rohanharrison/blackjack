@@ -8,7 +8,8 @@ var bcrypt = require('bcryptjs');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
 
-var deck = require('./game/deck.js');
+
+var deal = require('./game/deal.js');
 
 var User = mongoose.model('User', new Schema({
 	id: ObjectId,
@@ -18,8 +19,16 @@ var User = mongoose.model('User', new Schema({
 	avatar: String,
 }))
 
+var Game = mongoose.model('Game', new Schema({
+	id: ObjectId,
+	deck: [],
+	playerHand: [],
+	dealerHand: [],
+}))
+
+
 app.set('view engine', 'jade');
-app.locals.pretty = true; 
+app.locals.pretty = true;
 
 // MongoDB
 mongoose.connect('mongodb://localhost/auth');
@@ -78,7 +87,7 @@ app.post('/register', function(req, res) {
 		chips: 2000,
 		avatar: '/images/avatar.png',
 	});
-	user.save(function(err) { 
+	user.save(function(err) {
 		if (err){
 			var err = 'Something bad happened! Please try again.';
 			res.render('register.jade', {error: 'That user is already taken, try again.'});
@@ -130,7 +139,15 @@ app.get('/game', function(req, res) {
 				req.session.reset();
 				res.redirect('/game');
 			} else {
-				deck.init();
+				var theDeal = deal.init();
+				var thisGame = new Game;
+				thisGame.deck = theDeal.deck;
+				thisGame.playerHand = theDeal.playerHand;
+				thisGame.dealerHand = theDeal.dealerHand;
+				thisGame.save(function (err){
+					var msg = err || "I worked!";
+					console.log(msg);
+				});
 				res.locals.user = user;
 				res.render('game.jade');
 			}
