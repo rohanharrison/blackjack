@@ -74,10 +74,10 @@ app.post('/register', function(req, res) {
 		password: hash,
 		chips: 2000,
 	});
-	user.save(function(err) {
+	user.save(function(err) { 
 		if (err) {
 			var err = 'Something bad happened! Please try again.';
-			if (err.code === 11000) {
+			if (err) {
 				error = 'That user is already taken, try again.';
 			}
 			res.render('register.jade', {error: error });
