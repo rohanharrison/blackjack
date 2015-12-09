@@ -12,7 +12,7 @@ var init = (function () {
     function initCards() {
         for (var i = 0; i < suits.length; i++) {
             for (var x = 0; x < cardValues.length; x++) {
-                deck[count] = new c.card(cardValues[x], suits[i], x + 1, cardValues[x] +  suits[i] + '.svg');
+                deck[count] = new c.card(cardValues[x], suits[i], x + 1, "/images/cards/" + cardValues[x] +  suits[i] + '.svg');
 
         				if (x > 9 || x === 0) {
         					deck[count].gameVal = 11;

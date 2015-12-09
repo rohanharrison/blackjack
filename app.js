@@ -149,6 +149,8 @@ app.get('/game', function(req, res) {
 					console.log(msg);
 				});
 				res.locals.user = user;
+				console.log(theDeal.playerHand[0].imgSrc);
+				res.locals.pcone = theDeal.playerHand[0].imgSrc;
 				res.render('game.jade');
 			}
 		});
