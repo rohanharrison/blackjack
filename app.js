@@ -49,6 +49,20 @@ app.get('/', function(req, res) {
 		res.render('index.jade');
 	}
 });
+app.post('/', function(req, res) {
+	User.findOne({ username: req.body.username }, function(err, user) {
+		if (!user) {
+			res.render('login.jade', {error: 'Invalid username or password.'});
+		} else {
+			if (bcrypt.compareSync(req.body.password, user.password)) {
+				req.session.user = user;
+				res.redirect('/dashboard');
+			} else {
+				res.render('login.jade', {error: 'Invalid username or password.'});
+			}
+		}
+	});
+});
 
 app.get('/register', function(req, res) {
 	res.render('register.jade');

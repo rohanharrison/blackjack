@@ -18,9 +18,9 @@ html
     li: span #{user.username}
     li: span <a href="/logout">Logout</a>
   else
-  #topLogin
-   span <a href="/register">register</a>
-   form(method="post")
-    input(type="text", name="username" placeholder="username", required=true)
-    input(type="password", name="password" placeholder="password", required=true)
-    input(type="submit")
+   #topLogin
+    span <a href="/register">register</a>
+    form(method="post")
+     input(type="text", name="username" placeholder="username", required=true)
+     input(type="password", name="password" placeholder="password", required=true)
+     input(type="submit")
