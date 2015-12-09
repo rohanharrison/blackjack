@@ -5,7 +5,7 @@ body {
     padding: 0;
     overflow: hidden;
     color: #737373;
-    background: #F4F3F2 url('http://i.imgur.com/42HAeJq.png') repeat;
+    background: #F4F3F2 url('/images/bg.png') repeat;
 }
 a {
     text-decoration: none;

@@ -34,7 +34,7 @@ app.use(sessions({
 app.use(bodyParser.json());
 
 // Routes
-//app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/views'));
 
 app.get('/', function(req, res) {
 	if (req.session && req.session.user) {
