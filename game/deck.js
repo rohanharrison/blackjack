@@ -14,9 +14,13 @@ var init = (function () {
             for (var x = 0; x < cardValues.length; x++) {
                 deck[count] = new c.card(cardValues[x], suits[i], x + 1, "/images/cards/" + cardValues[x] +  suits[i] + '.svg');
 
-        				if (x > 9 || x === 0) {
-        					deck[count].gameVal = 11;
+        				if (x > 9) {
+        					deck[count].gameVal = 10;
         				}
+						
+						if (x === 0) {
+							deck[count].gameVal = 11;
+						}
 
                 count++;
             }
@@ -34,14 +38,10 @@ var init = (function () {
 			}
 		}
 
-    console
-
 
 	initCards();
 
 	shuffle();
-
-	console.log(deck[10].imgSrc);
 
 	return deck;
 

@@ -145,7 +145,7 @@ app.get('/game', function(req, res) {
 				thisGame.playerHand = theDeal.playerHand;
 				thisGame.dealerHand = theDeal.dealerHand;
 				thisGame.save(function (err){
-					var msg = err || "I worked!";
+					var msg = err || "";
 					console.log(msg);
 				});
 				res.locals.user = user;
@@ -159,6 +159,10 @@ app.get('/game', function(req, res) {
 	} else {
 		res.redirect('/game');
 	}
+});
+
+app.post('/game', function(req, res) {
+	console.log(req);
 });
 
 app.get('/logout', function(req, res) {
