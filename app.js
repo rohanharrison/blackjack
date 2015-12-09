@@ -152,8 +152,8 @@ app.get('/game', function(req, res) {
 				console.log(theDeal.playerHand[0].imgSrc);
 				res.locals.pcone = theDeal.playerHand[0].imgSrc;
 				res.locals.pctwo = theDeal.playerHand[1].imgSrc;
-				res.locals.dcone = theDeal.playerHand[0].imgSrc;
-				res.locals.dctwo = theDeal.playerHand[1].imgSrc;
+				res.locals.dcone = theDeal.dealerHand[0].imgSrc;
+				res.locals.dctwo = theDeal.dealerHand[1].imgSrc;
 				res.render('game.jade');
 			}
 		});
