@@ -12,7 +12,8 @@ block body
   p Usern: #{user.username}
   p Chips: #{user.chips}
   button#changeAvatar(data-action="bea") Change Avatar
-   input#changeAvatarUpload(type="file")
+   form(method="post")
+   input#changeAvatarUpload(type="file", name="avatar")
 
  #tables
   h2 Tables
