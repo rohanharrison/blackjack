@@ -37,13 +37,13 @@ Database: Jeff Stone, Richard Reilly
 
 
 # Software
-Visual Studio 
+IDE: Visual Studio
 
-D3, Dojo, Jade, CSS,
+Front: D3, Dojo, Jade, CSS, Javascript
 
-Nodejs, MongoDB, Express, socket.io, jade, client-sessions, bcryptjs
+Back/Framework: Node.js, MongoDB, Express, Jade, client-sessions, bcryptjs
 
 
 # Description
 
-This is a blackjack game built with Node, MongoDB, and Dojo, D3, Jade, and CSS for our front end.
+This is a blackjack game built with Node.js, MongoDB. We used Dojo/D3, Javascript, CSS, and Jade Templating for our front-end.
