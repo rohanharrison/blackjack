@@ -144,14 +144,10 @@ app.get('/game', function(req, res) {
 				Game.findOne({ username: req.session.user.username }, function(err, game) {
 					if (!!game) {
 						res.locals.user = user;
-						res.locals.pcone = game.playerHand[0].imgSrc;
-						res.locals.pctwo = game.playerHand[1].imgSrc;
-						res.locals.dcone = game.dealerHand[0].imgSrc;
-						res.locals.dctwo = game.dealerHand[1].imgSrc;
+						res.locals.game = game;
 						res.render('game.jade');
 				  }
 					else {
-						console.log("pls");
 						var theDeal = deal.init();
 						var thisGame = new Game;
 						thisGame.deck = theDeal.deck;
@@ -163,10 +159,7 @@ app.get('/game', function(req, res) {
 							console.log(msg);
 						});
 						res.locals.user = user;
-						res.locals.pcone = theDeal.playerHand[0].imgSrc;
-						res.locals.pctwo = theDeal.playerHand[1].imgSrc;
-						res.locals.dcone = theDeal.dealerHand[0].imgSrc;
-						res.locals.dctwo = theDeal.dealerHand[1].imgSrc;
+						res.locals.game = theDeal;
 						res.render('game.jade');
 					}});
 			}
