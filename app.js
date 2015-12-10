@@ -21,6 +21,7 @@ var User = mongoose.model('User', new Schema({
 
 var Game = mongoose.model('Game', new Schema({
 	id: ObjectId,
+	username: {type: String, unique: true },
 	deck: [],
 	playerHand: [],
 	dealerHand: [],
@@ -139,9 +140,18 @@ app.get('/game', function(req, res) {
 				req.session.reset();
 				res.redirect('/game');
 			} else {
+		if (req.session && req.session.user) {	
+			Game.findOne({ username: req.session.user.username }, function(err, user) {
+				res.local.pcone= user.playerHand[0];
+				res.local.pctwo= user.playerHand[1];
+				res.local.dcone= user.dealerHand[0];
+				res.local.dctwo= user.dealerHand[1];
+			   });
+			} else {
 				var theDeal = deal.init();
 				var thisGame = new Game;
 				thisGame.deck = theDeal.deck;
+				thisGame.username = req.session.user.username;
 				thisGame.playerHand = theDeal.playerHand;
 				thisGame.dealerHand = theDeal.dealerHand;
 				thisGame.save(function (err){
@@ -153,6 +163,7 @@ app.get('/game', function(req, res) {
 				res.locals.pctwo = theDeal.playerHand[1].imgSrc;
 				res.locals.dcone = theDeal.dealerHand[0].imgSrc;
 				res.locals.dctwo = theDeal.dealerHand[1].imgSrc;
+			}
 				res.render('game.jade');
 			}
 		});
