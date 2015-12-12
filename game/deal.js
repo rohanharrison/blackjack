@@ -21,7 +21,11 @@ var playerHit = function (state) {
     state.playerHand.push(state.deck.shift());
     var score = 0;
     for (var i = 0; i < state.playerHand.length; i++) {
-      score += state.playerHand[i].gameVal;
+		if (state.playerHand[i].gameVal != 0 && state.playerHand[i].gameVal === "undefined") {
+			score += state.playerHand[i].gameVal;
+		} else {
+			console.log('shit is fucked up, yo.');
+		}
     }
 
     if (score > 21) {
