@@ -176,12 +176,37 @@ app.get('/game', function(req, res) {
 			}
 		});
 	} else {
-		res.redirect('/game');
+		res.redirect('/login');
 	}
 });
 
 app.post('/game', function(req, res) {
-	console.log(req.text);
+	if (req.session && req.session.user) {
+		User.findOne({ username: req.session.user.username }, function(err, user) {
+			if (!user) {
+				req.session.reset();
+				res.redirect('/game');
+			}
+			else {
+				Game.findOne({ username: req.session.user.username }, function(err, game) {
+					if (!!game) {
+						if (req.text.localeCompare('hit') === 0)
+						{
+							deal.playerHit(game);
+							console.log(game);
+							game.save();
+							res.end(game.playerHand[game.playerHand.length-1].imgSrc);
+						}
+					} else {
+							console.log('Something went terribly wrong on the hit!! line 195');
+					}
+				});
+			}});
+
+
+	}	else {
+		res.redirect('/login');
+	}
 });
 
 app.get('/logout', function(req, res) {

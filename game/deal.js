@@ -15,6 +15,14 @@ var init = function () {
             playerHand: player
          };
 
-}
+};
+
+var playerHit = function (state) {
+      state.playerHand.push(state.deck.shift());
+      return state;
+};
+
+
 
 module.exports.init = init;
+module.exports.playerHit = playerHit;
