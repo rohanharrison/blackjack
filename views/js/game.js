@@ -2,7 +2,7 @@
 var hit = function() {
 	var http = new XMLHttpRequest();
 
-	http.open("POST", '/game');
+	http.open("POST", '/game', false);
 	http.onreadystatechange = function() {
     var elm = document.createElement('img');
 		elm.setAttribute('src', http.responseText);
