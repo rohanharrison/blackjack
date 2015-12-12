@@ -1,5 +1,4 @@
 extends base
-
 block vars
   - var title = 'Play'
 
@@ -9,12 +8,13 @@ block body
    img(src= "/images/cards/back.svg" id="dummy" width="120" height="170")
   #dealerDeck2
    img(src= "/images/cards/back.svg" id="dummy" width="120" height="170")
-  #dealerBoard
-   img(src= "/images/cards/back.svg" id="x" width="120" height="170")
-   img(src= "#{game.dealerHand[1].imgSrc}" id="y" width="120" height="170")
-  #playerBoard
-   img(src= "#{game.playerHand[0].imgSrc}" id="x" width="120" height="170")
-   img(src= "#{game.playerHand[1].imgSrc}" id="y" width="120" height="170")
+  #boardWrap
+   #dealerBoard
+    img(src= "/images/cards/back.svg" id="x" width="120" height="170")
+    img(src= "#{game.dealerHand[1].imgSrc}" id="y" width="120" height="170")
+   #playerBoard
+    img(src= "#{game.playerHand[0].imgSrc}" id="x" width="120" height="170")
+    img(src= "#{game.playerHand[1].imgSrc}" id="y" width="120" height="170")
  #avatar
   img(src= "#{user.avatar}")
  #controls

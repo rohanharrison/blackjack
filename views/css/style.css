@@ -121,10 +121,18 @@ input[type=submit] {
     border-top-right-radius: 8px;
     border: 12px solid brown;
 }
+#boardWrap {
+	width: 700px;
+	height: 100%;
+}
 #dealerBoard {
-    width: 245px;
-    margin-left: auto;
-    margin-right: auto;
+	width: 100%;
+	margin-left: 200px;
+}
+#playerBoard {
+	width: 100%;
+    margin-top: 90px;
+	margin-left: 200px;
 }
 #dealerDeck {
     position: absolute;
@@ -132,12 +140,6 @@ input[type=submit] {
 #dealerDeck2 {
     position: absolute;
     margin-left: -5px;
-}
-#playerBoard {
-    width: 245px;
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
 }
 /* Hit or Naw */
 #controls {

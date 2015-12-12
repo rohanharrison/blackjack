@@ -8,6 +8,9 @@ var hit = function() {
 		elm.setAttribute('src', http.responseText);
 		elm.setAttribute('width', '120');
 		elm.setAttribute('height', '170');
+		elm.style.marginLeft = "2px";
+		elm.style.marginRight = "1px";
+		elm.style.borderRadius = "4px";
 		document.getElementById('playerBoard').appendChild(elm);
   };
 	http.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
@@ -36,3 +39,5 @@ var naw = function() {
 	http.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 	http.send("naw");
 };
+
+
