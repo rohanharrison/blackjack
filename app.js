@@ -193,7 +193,6 @@ app.post('/game', function(req, res) {
 						if (req.text.localeCompare('hit') === 0)
 						{
 							deal.playerHit(game);
-							console.log(game);
 							game.save();
 							res.end(game.playerHand[game.playerHand.length-1].imgSrc);
 						}
