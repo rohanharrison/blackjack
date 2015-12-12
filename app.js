@@ -35,6 +35,17 @@ app.locals.pretty = true;
 mongoose.connect('mongodb://localhost/auth');
 
 // Express
+app.use(function(req, res, next){
+  if (req.is('text/*')) {
+    req.text = '';
+    req.setEncoding('utf8');
+    req.on('data', function(chunk){ req.text += chunk });
+    req.on('end', next);
+  } else {
+    next();
+  }
+});
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(sessions({
 	cookieName: 'session',
@@ -170,7 +181,7 @@ app.get('/game', function(req, res) {
 });
 
 app.post('/game', function(req, res) {
-	console.log(req);
+	console.log(req.text);
 });
 
 app.get('/logout', function(req, res) {
