@@ -189,6 +189,7 @@ app.post('/game', function(req, res) {
 				res.redirect('/game');
 			}
 			else {
+				//would be nice to have everything pretti from here pls.
 				Game.findOne({ username: req.session.user.username }, function(err, game) {
 					if (!!game) {
 						if (req.text.localeCompare('hit') === 0)
