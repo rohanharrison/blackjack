@@ -22,14 +22,14 @@ var naw = function() {
 		console.log(http.responseText);
 		var myArr = JSON.parse(http.responseText);
 		document.getElementById('x').src = myArr[0].imgSrc;
-		for (var i = 2; i < myArr.length; i++) {
+		setTimeout(function() {for (var i = 2; i < myArr.length; i++) {
 			console.log(myArr[i].imgSrc);
 			var elm = document.createElement('img');
 			elm.setAttribute('src', myArr[i].imgSrc);
 			elm.setAttribute('width', '120');
 			elm.setAttribute('height', '170');
 			document.getElementById('dealerBoard').appendChild(elm);
-		}
+		} }, 100);
 
 		console.log('wtf');
   };
