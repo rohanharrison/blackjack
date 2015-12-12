@@ -154,6 +154,7 @@ app.get('/game', function(req, res) {
 			else {
 				Game.findOne({ username: req.session.user.username }, function(err, game) {
 					if (!!game) {
+						console.log(game.playerHand[2]);
 						res.locals.user = user;
 						res.locals.game = game;
 						res.render('game.jade');
@@ -195,6 +196,10 @@ app.post('/game', function(req, res) {
 							deal.playerHit(game);
 							game.save();
 							res.end(game.playerHand[game.playerHand.length-1].imgSrc);
+						} else if (req.text.localeCompare('naw') === 0) {
+							deal.dealerHit(game);
+							res.json(game.dealerHand);
+							res.end();
 						}
 					} else {
 							console.log('Something went terribly wrong on the hit!! line 195');
