@@ -7,7 +7,7 @@ var sessions = require('client-sessions');
 var bcrypt = require('bcryptjs');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
-
+var fs = require("fs");
 
 var deal = require('./game/deal.js');
 
@@ -58,6 +58,7 @@ app.use(bodyParser.json());
 // Routes
 app.use(express.static(__dirname + '/views'));
 
+
 app.get('/', function(req, res) {
 	if (req.session && req.session.user) {
 		User.findOne({ username: req.session.user.username }, function(err, user) {
@@ -73,6 +74,8 @@ app.get('/', function(req, res) {
 		res.render('index.jade');
 	}
 });
+
+
 app.post('/', function(req, res) {
 	User.findOne({ username: req.body.username }, function(err, user) {
 		if (!user) {
@@ -143,6 +146,7 @@ app.get('/dashboard', function(req, res) {
 		res.redirect('/login');
 	}
 });
+
 
 app.get('/game', function(req, res) {
 	if (req.session && req.session.user) {
@@ -218,6 +222,7 @@ app.get('/logout', function(req, res) {
 	req.session.reset();
 	res.redirect('/');
 });
+
 
 // Start server
 app.listen(3000);
