@@ -254,14 +254,16 @@ input[type=submit] {
     border: 1px solid #bfbfbf;
     text-transform: uppercase;
     background-color: transparent;
+	z-index: 1000;
 }
 /* Real Change Avatar Input */
 #changeAvatarUpload {
     position: absolute;
-    margin-top: -23px;
-    margin-left: -65px;
+    margin-top: 52px;
+    margin-left: -136px;
     width: 115px;
     opacity: 0.0;
+	z-index: 1001;
 }
 /* All error messages */
 .errorMessage {

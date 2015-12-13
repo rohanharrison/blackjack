@@ -12,7 +12,8 @@ block body
   p Usern: #{user.username}
   p Chips: #{user.chips}
   button#changeAvatar(data-action="bea") Change Avatar
-   form(method="post")
+  form(method="post",enctype="multipart\/form-data", action="/nodejs-upload/")
+   input(type="hidden", name="sid", value=sessionId)
    input#changeAvatarUpload(type="file", name="avatar")
 
  #tables
