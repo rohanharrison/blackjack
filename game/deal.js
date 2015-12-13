@@ -20,8 +20,9 @@ var init = function () {
 var playerHit = function (state) {
     state.playerHand.push(state.deck.shift());
     var score = 0;
+    console.log(state.playerHand);
     for (var i = 0; i < state.playerHand.length; i++) {
-		if (state.playerHand[i].gameVal != 0 && state.playerHand[i].gameVal === "undefined") {
+		if (!!state.playerHand[i].gameVal) {
 			score += state.playerHand[i].gameVal;
 		} else {
 			console.log('shit is fucked up, yo.');
