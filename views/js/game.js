@@ -13,6 +13,7 @@ var hit = function() {
 			document.getElementById('result').style.display = 'block';
 			document.getElementById('result').innerHTML = "BUST! You're a loser";
 			document.getElementById('controls').style.display = 'none';
+			document.getElementById('roundControls').style.display = 'inline-block';
 		}
   };
 	http.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
@@ -21,6 +22,7 @@ var hit = function() {
 
 var naw = function() {
 	document.getElementById('controls').style.display = 'none';
+	document.getElementById('roundControls').style.display = 'inline';
   var http = new XMLHttpRequest();
 	http.open("POST", '/game', false);
 	http.onreadystatechange = function() {
@@ -51,4 +53,8 @@ var addImage = function (imgSrc, where) {
 	elm.setAttribute('height', '170');
 	elm.style.borderRadius = "4px";
 	document.getElementById(where).appendChild(elm);
-}
+};
+
+var home = function (){
+	window.location.href = './dashboard';
+};

@@ -234,7 +234,7 @@ app.post('/game', function(req, res) {
 							res.end();
 						}
 					} else {
-						console.log('Something went terribly wrong on the hit!! line 195');
+						console.log('Something went terribly wrong on the hit!!');
 					}
 				});
 			}});
