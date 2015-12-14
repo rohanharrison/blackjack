@@ -20,7 +20,7 @@ $ node app.js
 # Team
 Front: Rohan Harrison
 
-Back: Brian Bianchi, Tyler Benson
+Back: Brian Bianchi
 
 Database: Jeff Stone, Richard Reilly
 
