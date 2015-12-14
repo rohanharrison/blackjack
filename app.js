@@ -184,7 +184,6 @@ app.get('/game', function(req, res) {
 			else {
 				Game.findOne({ username: req.session.user.username }, function(err, game) {
 					if (!!game) {
-						console.log(game.status);
 						res.locals.user = user;
 						res.locals.game = game;
 						res.render('game.jade');
@@ -202,7 +201,7 @@ app.get('/game', function(req, res) {
 							console.log(msg);
 						});
 						res.locals.user = user;
-						res.locals.game = theDeal;
+						res.locals.game = thisGame;
 						res.render('game.jade');
 					}});
 			}
