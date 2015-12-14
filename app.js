@@ -184,6 +184,7 @@ app.get('/game', function(req, res) {
 			else {
 				Game.findOne({ username: req.session.user.username }, function(err, game) {
 					if (!!game) {
+						console.log(game.status);
 						res.locals.user = user;
 						res.locals.game = game;
 						res.render('game.jade');
@@ -230,6 +231,7 @@ app.post('/game', function(req, res) {
 							res.end();
 						} else if (req.text.localeCompare('naw') === 0) {
 							deal.dealerHit(game);
+							game.save();
 							res.json(game);
 							res.end();
 						}

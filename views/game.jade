@@ -11,7 +11,10 @@ block body
    img(src= "/images/cards/back.svg" id="dummy" width="120" height="170")
   #boardWrap
    #dealerBoard
-    img(src= "/images/cards/back.svg" id="x" width="120" height="170")
+    if status=='play'
+      img(src= "/images/cards/back.svg" id="x" width="120" height="170")
+    else
+      img(src= "#{game.dealerHand[0].imgSrc}" id="x" width="120" height="170")
     img(src= "#{game.dealerHand[1].imgSrc}" id="y" width="120" height="170")
    #gameResult
     case status
@@ -39,5 +42,5 @@ block body
     i &nbsp;or&nbsp;
     button#no(data-action="bea" onclick='naw()') Rematch
   button#hit(data-action="bea" onclick='home()' style='display:none') Home
-  i &nbsp;or&nbsp;
+
   button#no(data-action="bea" onclick='naw()' style='display:none') Rematch
