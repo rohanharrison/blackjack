@@ -157,12 +157,12 @@ var storage = multer.diskStorage({
 });
 var upload = multer({ storage: storage });
 app.post('/upload', upload.single('avatar'),  function(req, res) {
-  User.update({ username: req.body.username }, function(err, user) {
+		User.findOne({ username: req.session.user.username }, function(err, user) {
 		if (!user) {
 			res.redirect('/dashboard');
 		} else {
 				req.session.user = user;
-				user.avatar = './views/images/avatars' + req.session.user.username + '.png' || '/images/avatar.png';
+				user.avatar = '/images/avatars/' + req.session.user.username + '.png' || '/images/avatar.png';
 				user.save(function (err){
 						var msg = err || "";
 						console.log(msg);
