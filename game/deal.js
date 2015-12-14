@@ -17,7 +17,7 @@ var init = function () {
 
 };
 
-var tally (hand) {
+var tally = function (hand) {
   var score = 0;
   for (var i = 0; i < hand.length; i++) {
     if (!!hand[i].gameVal) {
@@ -47,9 +47,9 @@ var dealerHit = function (state) {
       dealerScore += state.dealerHand[state.dealerHand.length - 1].gameVal;
     }
 
-    if (dealerScore > 21 && playerScore > dealerScore) {
+    if (dealerScore > 21 || playerScore > dealerScore) {
       state.status = 'win';
-    } else if (dealerScore < playerScore) {
+    } else if (dealerScore > playerScore) {
       state.status = 'lose';
     }
 };

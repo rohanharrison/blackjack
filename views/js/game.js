@@ -26,15 +26,16 @@ var naw = function() {
 	http.onreadystatechange = function() {
 		var myArr = JSON.parse(http.responseText);
 		var dealerHand = myArr.dealerHand;
+		var status = myArr.status;
 		document.getElementById('x').src = dealerHand[0].imgSrc;
 		setTimeout(function() {for (var i = 2; i < myArr.length; i++) {
 			console.log(myArr[i]);
 			addImage(dealerHand[i].imgSrc, 'dealerBoard');
 			}}, 100);
-		if (status.localeCompare('lose') == 0) {
+		if (status.localeCompare('win') == 0) {
 			document.getElementById('result').style.display = 'block';
 			document.getElementById('result').innerHTML = "WINNER, WINNER Chicken Dinner!";
-		} else if (status.localeCompare('win') == 0) {
+		} else if (status.localeCompare('lose') == 0) {
 			document.getElementById('result').style.display = 'block';
 			document.getElementById('result').innerHTML = "LOSER! Sucks to suck";
 		}
