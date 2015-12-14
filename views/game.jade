@@ -13,9 +13,10 @@ block body
    #dealerBoard
     if status=='play'
       img(src= "/images/cards/back.svg" id="x" width="120" height="170")
+      img(src= "#{game.dealerHand[1].imgSrc}" id="y" width="120" height="170")
     else
-      img(src= "#{game.dealerHand[0].imgSrc}" id="x" width="120" height="170")
-    img(src= "#{game.dealerHand[1].imgSrc}" id="y" width="120" height="170")
+      each card in game.dealerHand
+        img(src= "#{card.imgSrc}" id="x" width="120" height="170")
    #gameResult
     case status
       when 'play'
@@ -40,7 +41,6 @@ block body
   if status=='bust' || status=='win' || status=='lose'
     button#hit(data-action="bea" onclick='home()') Home
     i &nbsp;or&nbsp;
-    button#no(data-action="bea" onclick='naw()') Rematch
+    button#no(data-action="bea" onclick='reset()') Rematch
   button#hit(data-action="bea" onclick='home()' style='display:none') Home
-
-  button#no(data-action="bea" onclick='naw()' style='display:none') Rematch
+  button#no(data-action="bea" onclick='reset()' style='display:none') Rematch

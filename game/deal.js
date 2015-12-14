@@ -49,7 +49,7 @@ var dealerHit = function (state) {
 
     if (dealerScore > 21 || playerScore > dealerScore) {
       state.status = 'win';
-    } else if (dealerScore > playerScore) {
+    } else if (dealerScore > playerScore || dealerScore == playerScore) {
       state.status = 'lose';
     }
 };

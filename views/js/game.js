@@ -6,7 +6,6 @@ var hit = function() {
 		var myArr = JSON.parse(http.responseText);
 		var playerHand = myArr.playerHand[myArr.playerHand.length - 1];
 		var status = myArr.status;
-		console.log(status);
     addImage(playerHand.imgSrc, 'playerBoard');
 		console.log(status);
 		if (status.localeCompare('bust') == 0) {
@@ -14,6 +13,7 @@ var hit = function() {
 			document.getElementById('result').innerHTML = "BUST! You're a loser";
 			document.getElementById('controls').style.display = 'none';
 			document.getElementById('roundControls').style.display = 'inline-block';
+			location.reload();
 		}
   };
 	http.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
@@ -23,16 +23,18 @@ var hit = function() {
 var naw = function() {
 	document.getElementById('controls').style.display = 'none';
 	document.getElementById('roundControls').style.display = 'inline';
-  var http = new XMLHttpRequest();
+  var http = new XMLHttpRequest
 	http.open("POST", '/game', false);
 	http.onreadystatechange = function() {
 		var myArr = JSON.parse(http.responseText);
 		var dealerHand = myArr.dealerHand;
 		var status = myArr.status;
 		document.getElementById('x').src = dealerHand[0].imgSrc;
-		setTimeout(function() {for (var i = 2; i < myArr.length; i++) {
-			console.log(myArr[i]);
-			addImage(dealerHand[i].imgSrc, 'dealerBoard');
+		console.log(dealerHand);
+		setTimeout(function() {
+			for (var i = 2; i < myArr.length; i++) {
+				console.log(myArr[i]);
+				addImage(dealerHand[i].imgSrc, 'dealerBoard');
 			}}, 100);
 		if (status.localeCompare('win') == 0) {
 			document.getElementById('result').style.display = 'block';
@@ -41,6 +43,7 @@ var naw = function() {
 			document.getElementById('result').style.display = 'block';
 			document.getElementById('result').innerHTML = "LOSER! Sucks to suck";
 		}
+		location.reload();
   };
 	http.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 	http.send("naw");
@@ -55,6 +58,16 @@ var addImage = function (imgSrc, where) {
 	document.getElementById(where).appendChild(elm);
 };
 
-var home = function (){
+var home = function() {
 	window.location.href = './dashboard';
+};
+
+var reset = function() {
+	var http = new XMLHttpRequest();
+	http.open("POST", '/game', false);
+	http.onreadystatechange = function() {
+		location.reload();
+  };
+	http.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+	http.send("reset");
 };
