@@ -31,6 +31,7 @@ var playerHit = function (state) {
 
     if (score > 21) {
       state.playerHand[state.playerHand.length -1].imgSrc = 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQd30MPl6oe94Xav7_ozbe5TjjY2HgjXYSD4ldf4tsmQ42862La_A';
+      //window.setTimeout(function(){},1000);
     }
     return state;
 };
