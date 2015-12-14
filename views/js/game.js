@@ -49,8 +49,6 @@ var addImage = function (imgSrc, where) {
 	elm.setAttribute('src', imgSrc);
 	elm.setAttribute('width', '120');
 	elm.setAttribute('height', '170');
-	elm.style.marginLeft = "2px";
-	elm.style.marginRight = "1px";
 	elm.style.borderRadius = "4px";
 	document.getElementById(where).appendChild(elm);
 }
