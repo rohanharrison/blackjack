@@ -8,13 +8,12 @@ block body
   h2 Dashboard
   p Welcome, #{user.username}! You are now logged in.
   h2 Account
-  img#dashboardAvatar(src= "#{user.avatar}")
+  img#dashboardAvatar(src= "#{user.avatar}" width="125" height="125")
   p Usern: #{user.username}
   p Chips: #{user.chips}
   button#changeAvatar(data-action="bea") Change Avatar
-  form(action='/dashboard', method='POST', enctype='multipart/form-data')
-   input#changeAvatarUpload(type="file", name="displayImage")
-   input(type="submit" value="Submit")
+  form(action='/upload', method='POST', enctype='multipart/form-data')
+   input#changeAvatarUpload(type="file", name="avatar", accept="image/*", onchange="this.form.submit();")
 
  #tables
   h2 Tables

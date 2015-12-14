@@ -7,7 +7,7 @@ var sessions = require('client-sessions');
 var bcrypt = require('bcryptjs');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.ObjectId;
-var fs = require("fs");
+var multer  = require('multer');
 
 var deal = require('./game/deal.js');
 
@@ -145,6 +145,31 @@ app.get('/dashboard', function(req, res) {
 	} else {
 		res.redirect('/login');
 	}
+});
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './views/images/avatars')
+  },
+  filename: function (req, file, cb) {
+    cb(null, req.session.user.username + '.png')
+  }
+});
+var upload = multer({ storage: storage });
+app.post('/upload', upload.single('avatar'),  function(req, res) {
+  User.update({ username: req.body.username }, function(err, user) {
+		if (!user) {
+			res.redirect('/dashboard');
+		} else {
+				req.session.user = user;
+				user.avatar = './views/images/avatars' + req.session.user.username + '.png' || '/images/avatar.png';
+				user.save(function (err){
+						var msg = err || "";
+						console.log(msg);
+						});
+		}
+	});
+  res.redirect('/dashboard');
 });
 
 
