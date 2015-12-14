@@ -1,6 +1,7 @@
 extends base
 block vars
   - var title = 'Play'
+  - var status = game.status
 
 block body
  #board
@@ -13,13 +14,22 @@ block body
     img(src= "/images/cards/back.svg" id="x" width="120" height="170")
     img(src= "#{game.dealerHand[1].imgSrc}" id="y" width="120" height="170")
    #gameResult
-    <h1 id='result' style="display:none">hi</h1>
+    case status
+      when 'play'
+        h1(id='result' style='display:none') Hello!
+      when 'win'
+        h1(id='result') WINNER, WINNER Chicken dinner!
+      when 'lose'
+        h1(id='result') LOSER! Sucks to suck
+      when 'bust'
+        h1(id='result') BUST! You're a loser
    #playerBoard
     each card in game.playerHand
       img(src= "#{card.imgSrc}" id="x" width="120" height="170")
  #avatar
   img(src= "#{user.avatar}" width="125" height="125")
  #controls
-  button#hit(data-action="bea" onclick='hit()') Hit
-  i &nbsp;or&nbsp;
-  button#no(data-action="bea" onclick='naw()') Naw
+  if status=='play'
+    button#hit(data-action="bea" onclick='hit()') Hit
+    i &nbsp;or&nbsp;
+    button#no(data-action="bea" onclick='naw()') Naw

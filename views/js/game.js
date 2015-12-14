@@ -11,7 +11,7 @@ var hit = function() {
 		console.log(status);
 		if (status.localeCompare('bust') == 0) {
 			document.getElementById('result').style.display = 'block';
-			document.getElementById('result').innerHTML = "BUST! You Lose";
+			document.getElementById('result').innerHTML = "BUST! You're a loser";
 			document.getElementById('controls').style.display = 'none';
 		}
   };

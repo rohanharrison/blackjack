@@ -31,7 +31,7 @@ var tally = function (hand) {
 
 var playerHit = function (state) {
     state.playerHand.push(state.deck.shift());
-    var playerScore = tally(state.playerhand);
+    var playerScore = tally(state.playerHand);
     if (playerScore > 21) {
       state.status = 'bust';
     }
