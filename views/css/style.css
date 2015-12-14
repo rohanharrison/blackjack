@@ -152,7 +152,6 @@ input[type=submit] {
     right: 0;
     margin-top: 585px;
     color: #F5F4F3;
-	z-index: 1001;
 }
 #controls button {
     background-color: transparent;
@@ -179,7 +178,6 @@ input[type=submit] {
     right: 0;
     margin-top: 585px;
     color: #F5F4F3;
-	z-index: 1000;
 }
 #roundControls button {
     background-color: transparent;
@@ -194,7 +192,7 @@ input[type=submit] {
     border: 1px solid #F5F4F3;
     text-transform: uppercase;
     line-height: 5px;
-	text-align: center;
+	  text-align: center;
 }
 /* Game Board Avatar */
 #avatar {
