@@ -12,6 +12,8 @@ block body
    #dealerBoard
     img(src= "/images/cards/back.svg" id="x" width="120" height="170")
     img(src= "#{game.dealerHand[1].imgSrc}" id="y" width="120" height="170")
+   #gameResult
+    <h1 id='result' style="display:none">hi</h1>
    #playerBoard
     each card in game.playerHand
       img(src= "#{card.imgSrc}" id="x" width="120" height="170")

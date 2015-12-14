@@ -288,3 +288,10 @@ input[type=submit] {
     margin-top: 4px;
     margin-left: 4px;
 }
+
+#result {
+  position: absolute;
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+}

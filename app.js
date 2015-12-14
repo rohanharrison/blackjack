@@ -25,6 +25,7 @@ var Game = mongoose.model('Game', new Schema({
 	deck: [],
 	playerHand: [],
 	dealerHand: [],
+	status: String,
 }))
 
 
@@ -195,6 +196,7 @@ app.get('/game', function(req, res) {
 						thisGame.username = req.session.user.username;
 						thisGame.playerHand = theDeal.playerHand;
 						thisGame.dealerHand = theDeal.dealerHand;
+						thisGame.status = 'play';
 						thisGame.save(function (err){
 							var msg = err || "";
 							console.log(msg);
@@ -225,10 +227,11 @@ app.post('/game', function(req, res) {
 						{
 							deal.playerHit(game);
 							game.save();
-							res.end(game.playerHand[game.playerHand.length-1].imgSrc);
+							res.json(game)
+							res.end();
 						} else if (req.text.localeCompare('naw') === 0) {
 							deal.dealerHit(game);
-							res.json(game.dealerHand);
+							res.json(game);
 							res.end();
 						}
 					} else {

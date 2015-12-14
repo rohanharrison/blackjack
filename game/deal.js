@@ -17,36 +17,40 @@ var init = function () {
 
 };
 
+var tally (hand) {
+  var score = 0;
+  for (var i = 0; i < hand.length; i++) {
+    if (!!hand[i].gameVal) {
+      score += hand[i].gameVal;
+    } else {
+      console.log('stuff is messed up, yo.');
+    }
+  }
+  return score;
+}
+
 var playerHit = function (state) {
     state.playerHand.push(state.deck.shift());
-    var score = 0;
-    console.log(state.playerHand);
-    for (var i = 0; i < state.playerHand.length; i++) {
-		if (!!state.playerHand[i].gameVal) {
-			score += state.playerHand[i].gameVal;
-		} else {
-			console.log('shit is fucked up, yo.');
-		}
-    }
-
-    if (score > 21) {
-      state.playerHand[state.playerHand.length -1].imgSrc = 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQd30MPl6oe94Xav7_ozbe5TjjY2HgjXYSD4ldf4tsmQ42862La_A';
-      //window.setTimeout(function(){},1000);
+    var playerScore = tally(state.playerhand);
+    if (playerScore > 21) {
+      state.status = 'bust';
     }
     return state;
 };
 
 var dealerHit = function (state) {
-    var score = 0;
-    for (var i = 0; i < state.dealerHand.length; i++) {
-      score += state.dealerHand[i].gameVal;
-    }
-    console.log(score);
+    var playerScore = tally(state.playerHand);
+    var dealerScore = tally(state.dealerHand);
 
-    while (score < 17) {
+    while (dealerScore < 17) {
       state.dealerHand.push(state.deck.shift());
-      score += state.dealerHand[state.dealerHand.length - 1].gameVal;
-      console.log(score);
+      dealerScore += state.dealerHand[state.dealerHand.length - 1].gameVal;
+    }
+
+    if (dealerScore > 21 && playerScore > dealerScore) {
+      state.status = 'win';
+    } else if (dealerScore < playerScore) {
+      state.status = 'lose';
     }
 };
 
