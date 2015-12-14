@@ -200,6 +200,8 @@ app.get('/game', function(req, res) {
 							var msg = err || "";
 							console.log(msg);
 						});
+						user.chips -= 200;
+						user.save();
 						res.locals.user = user;
 						res.locals.game = thisGame;
 						res.render('game.jade');
@@ -231,7 +233,10 @@ app.post('/game', function(req, res) {
 						} else if (req.text.localeCompare('naw') === 0) {
 							deal.dealerHit(game);
 							game.save();
-							console.log(game.dealerHand);
+							if (game.status.localeCompare('win') == 0) {
+									user.chips += 400;
+									user.save();
+							}
 							res.json(game);
 							res.end();
 						} else if (req.text.localeCompare('reset') === 0) {
@@ -245,6 +250,8 @@ app.post('/game', function(req, res) {
 								var msg = err || "";
 								console.log(msg);
 							});
+							user.chips -= 200;
+							user.save();
 							res.end('reset');
 						}
 					} else {
