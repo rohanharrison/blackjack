@@ -37,10 +37,7 @@ block body
     button#hit(data-action="bea" onclick='hit()') Hit
     i &nbsp;or&nbsp;
     button#no(data-action="bea" onclick='naw()') Naw
- #roundControls
   if status=='bust' || status=='win' || status=='lose'
     button#hit(data-action="bea" onclick='home()') Home
     i &nbsp;or&nbsp;
-    button#no(data-action="bea" onclick='reset()') Rematch
-  button#hit(data-action="bea" onclick='home()' style='display:none') Home
-  button#no(data-action="bea" onclick='reset()' style='display:none') Rematch
+    button#no(data-action="bea" class='reset' onclick='reset()') Rematch

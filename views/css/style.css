@@ -146,7 +146,7 @@ input[type=submit] {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    width: 232px;
+    width: 270px;
     height: 35px;
     left: 0;
     right: 0;
@@ -158,7 +158,7 @@ input[type=submit] {
     color: #F5F4F3;
     border-radius: 1px;
     font-size: 1.1em;
-    width: 100px;
+    width: 115px;
     height: 25px;
     border: 0;
     margin-top: -30px;
@@ -179,7 +179,7 @@ input[type=submit] {
     margin-top: 585px;
     color: #F5F4F3;
 }
-#roundControls button {
+.reset {
     background-color: transparent;
     color: #F5F4F3;
     border-radius: 1px;
