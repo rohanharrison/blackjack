@@ -25,14 +25,12 @@ Back: Brian Bianchi
 Database: Jeff Stone, Richard Reilly
 
 
-# Software
-IDE: Visual Studio
-
+# Technologies used
 Front: Jade, CSS, Javascript
 
-Back/Framework: Node.js, MongoDB, Express, Jade, client-sessions, bcryptjs
+Back/Framework: Nodejs, MongoDB, Express, Jade, client-sessions, bcryptjs
 
 
 # Description
 
-This is a blackjack game built with Node.js, MongoDB. Using Javascript, CSS, and Jade Templating for our front-end.
+This is a blackjack game built with Nodejs, MongoDB. Using Javascript, CSS, and Jade Templating for our front-end.

@@ -19,13 +19,24 @@ var init = function () {
 
 var tally = function (hand) {
   var score = 0;
+  var numAce = 0;
   for (var i = 0; i < hand.length; i++) {
     if (!!hand[i].gameVal) {
       score += hand[i].gameVal;
+      if (hand[i].gameVal == 11) {
+        numAce++;
+      }
+      for (var j = 0; j < numAce; j++) {
+        if(score>21 && numAce>0) {
+          score-= 10;
+          numAce--;
+        }
+      }
     } else {
       console.log('stuff is messed up, yo.');
     }
   }
+  //console.log(score);
   return score;
 }
 
@@ -44,7 +55,7 @@ var dealerHit = function (state) {
 
     while (dealerScore < 17) {
       state.dealerHand.push(state.deck.shift());
-      dealerScore += state.dealerHand[state.dealerHand.length - 1].gameVal;
+      dealerScore = tally(state.dealerHand); //+= state.dealerHand[state.dealerHand.length - 1].gameVal;
     }
 
     if (dealerScore > 21 || playerScore > dealerScore) {

@@ -20,13 +20,13 @@ block body
    #gameResult
     case status
       when 'play'
-        h1(id='result' style='display:none') Hello!
+        h1(id='result') Bet: 200 chips
       when 'win'
-        h1(id='result') WINNER, WINNER Chicken dinner!
+        h1(id='result') WINNER, WINNER Chicken dinner! +400 chips
       when 'lose'
-        h1(id='result') LOSER! Sucks to suck
+        h1(id='result') LOSER! Sucks to suck. -200 chips
       when 'bust'
-        h1(id='result') BUST! You're a loser
+        h1(id='result') BUST! You're a loser. -200 chips
    #playerBoard
     each card in game.playerHand
       img(src= "#{card.imgSrc}" id="x" width="120" height="170")
